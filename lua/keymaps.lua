@@ -34,30 +34,31 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'File tree' })
 
-vim.keymap.set('n', 'J', 'mzJ`z')
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move up' })
+
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Bring Up' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
-vim.keymap.set('n', '<leader>nh', ':nohl<CR>')
+vim.keymap.set('n', '<leader>nh', ':nohl<CR>', { desc = '[N]o [H]ighlight' })
 
 -- greatest remap ever
-vim.keymap.set('x', '<leader>p', [["_dP]])
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = '[P]aste keeping yanked' })
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = '[Y]ank into Clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = '[Y]ank line to Clipboard' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = '[D]elete into Clipboard' })
 
-vim.keymap.set('i', '<C-c>', '<Esc>')
+vim.keymap.set('i', '<C-c>', '<Esc>', { desc = '[E]sc' })
 
 vim.keymap.set('n', 'Q', '<nop>')
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format)
+vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = '[F]ormat' })
 
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zz')
@@ -65,9 +66,9 @@ vim.keymap.set('n', '<leader>k', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 vim.keymap.set('n', '<leader>ra', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]ename [A]ll in file' })
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make e[X]etucable' })
 
-vim.keymap.set({ 'n', 'v' }, '<leader>]', ':Gen<CR>')
+vim.keymap.set({ 'n', 'v' }, '<leader>]', ':Gen<CR>', { desc = '[G]enerate' })
 
 vim.keymap.set('n', '<leader>so', function()
   vim.cmd 'so'

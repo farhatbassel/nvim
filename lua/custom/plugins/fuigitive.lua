@@ -1,7 +1,7 @@
 return {
   'tpope/vim-fugitive',
   config = function()
-    vim.keymap.set('n', '<leader>gs', vim.cmd.Git)
+    vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
 
     local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup('ThePrimeagen_Fugitive', {})
 
@@ -31,8 +31,8 @@ return {
       end,
     })
 
-    vim.keymap.set('n', 'gu', '<cmd>diffget //2<CR>')
-    vim.keymap.set('n', 'gh', '<cmd>diffget //3<CR>')
-    vim.keymap.set('n', '<leader>gl ', ':Gclog<CR>')
+    vim.keymap.set('n', 'gl', '<cmd>diffget //2<CR>', { desc = '[G]it Take Left' })
+    vim.keymap.set('n', 'ga', '<cmd>diffget //3<CR>', { desc = '[G]it Take Right' })
+    vim.keymap.set('n', '<leader>gl ', ':Gclog<CR>', { desc = '[G]it [L]og' })
   end,
 }
