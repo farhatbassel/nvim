@@ -32,6 +32,13 @@ return {
         return '%2l:%-2v'
       end
 
+      local diff = require 'mini.diff'
+      diff.setup { source = diff.gen_source.save() }
+
+      require('mini.files').setup { options = { use_as_default_explorer = false }, windows = { preview = true, width_preview = 100 } }
+
+      vim.keymap.set('n', '<leader>m', '<cmd>lua MiniFiles.open()<CR>', { desc = 'Open [M] Files' })
+
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
