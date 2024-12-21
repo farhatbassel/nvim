@@ -34,9 +34,10 @@ return {
           winhighlight = { Normal = 'Normal', FloatBorder = 'DiagnosticInfo' },
         },
       },
+      messages = {},
+      scrollbar = { enabled = false },
+      notify = {},
     },
-    messages = {},
-    notify = {},
   },
   dependencies = {
     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

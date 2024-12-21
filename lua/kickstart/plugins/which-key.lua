@@ -21,14 +21,14 @@ return {
       require('which-key').setup()
 
       -- Document existing key chains
-      require('which-key').register {
-        { '<leader>c', group = '[C]ode' },
-        { '<leader>d', group = '[D]ocument' },
-        { '<leader>r', group = '[R]ename' },
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
-        { '<leader>g', group = '[G]it' },
-      }
+      -- require('which-key').register {
+      --   { '<leader>c', group = '[C]ode' },
+      --   { '<leader>d', group = '[D]ocument' },
+      --   { '<leader>r', group = '[R]ename' },
+      --   { '<leader>s', group = '[S]earch' },
+      --   { '<leader>w', group = '[W]orkspace' },
+      --   { '<leader>g', group = '[G]it' },
+      -- }
     end,
   },
 }
