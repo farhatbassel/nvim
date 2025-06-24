@@ -48,7 +48,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<leader>pv', '<cmd>Oil<CR>', { desc = 'File tree' })
+vim.keymap.set('n', '-', '<cmd>Oil<CR>', { desc = 'File tree' })
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move up' })
@@ -81,6 +81,8 @@ vim.keymap.set('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 vim.keymap.set('n', '<leader>ra', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]ename [A]ll in file' })
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true, desc = 'Make e[X]etucable' })
+
+vim.keymap.set('n', '<leader>db', ':DBUI<CR>', { silent = true, desc = 'Open [D]azy [B]it' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>]', ':Gen<CR>', { desc = '[G]enerate' })
 

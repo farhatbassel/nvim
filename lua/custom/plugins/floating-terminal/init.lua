@@ -1,6 +1,7 @@
 return {
-  'custom/floaing-terminal', -- Replace with a meaningful name or your custom plugin name
+  'floating-terminal',
   dev = true,
+  dir = vim.fn.expand '~/.config/nvim/lua/custom/plugins/floating-terminal',
   config = function()
     local state = {
       floating = {

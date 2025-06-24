@@ -146,13 +146,13 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {
-          preferences = {
-            -- other preferences...
-            importModuleSpecifierPreference = 'relative',
-            importModuleSpecifierEnding = 'minimal',
-          },
-        },
+        -- tsserver = {
+        --   preferences = {
+        --     -- other preferences...
+        --     importModuleSpecifierPreference = 'relative',
+        --     importModuleSpecifierEnding = 'minimal',
+        --   },
+        -- },
         --
 
         lua_ls = {
@@ -189,7 +189,12 @@ return {
       --    :Mason
       --
       --  You can press `g?` for help in this menu
-      require('mason').setup()
+      require('mason').setup {
+        registries = {
+          'github:Crashdummyy/mason-registry',
+          'github:mason-org/mason-registry',
+        },
+      }
 
       -- You can add other tools here that you want Mason to install
       -- for you, so that they are available from within Neovim.
@@ -209,6 +214,19 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+      }
+    end,
+  },
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    event = 'BufReadPre',
+    dependencies = { 'mason.nvim' },
+    opts = function()
+      local nls = require 'null-ls'
+      return {
+        sources = {
+          nls.builtins.formatting.prettier,
         },
       }
     end,
