@@ -181,8 +181,10 @@ return {
             },
           },
         },
+        graphql = {
+          filetypes = { 'graphql', 'typescript', 'javascript' },
+        },
       }
-
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -204,6 +206,10 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      -- for server_name, server_config in pairs(servers) do
+      --   vim.lsp.enable(server_name)
+      --   vim.lsp.config(server_name, server_config)
+      -- end
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
